@@ -1,0 +1,242 @@
+{
+  "nav": {
+    "brand": "Flowpilot",
+    "home": "Home",
+    "features": "Features",
+    "testimonials": "Testimonials",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "cta": "Start free trial"
+  },
+  "footer": {
+    "heading": "Flowpilot",
+    "body": "The all-in-one workspace for teams who'd rather build than coordinate.",
+    "cta": "Start free trial",
+    "columns": [
+      {
+        "title": "Product",
+        "items": [
+          "Features",
+          "Pricing",
+          "Integrations",
+          "Changelog"
+        ]
+      },
+      {
+        "title": "Company",
+        "items": [
+          "About us",
+          "Careers",
+          "Blog",
+          "Contact"
+        ]
+      },
+      {
+        "title": "Resources",
+        "items": [
+          "Help Center",
+          "API Docs",
+          "Community",
+          "Status"
+        ]
+      },
+      {
+        "title": "Legal",
+        "items": [
+          "Privacy Policy",
+          "Terms of Service",
+          "Security"
+        ]
+      }
+    ],
+    "copyright": "© 2024 Flowpilot, Inc. All rights reserved.",
+    "contactLabel": "Contact",
+    "contactEmail": "hello@flowpilot.io"
+  },
+  "hero": {
+    "badge": "Now with automated handoffs",
+    "titleLead": "One workspace for teams who'd rather",
+    "titleAccent": "build than coordinate",
+    "secondaryCta": "See how it works",
+    "trustNote": "No credit card required. Set up your first workspace in minutes.",
+    "panelTitle": "Sprint board",
+    "automationLabel": "Automation ran",
+    "automationText": "Moved 4 completed tasks to Done and notified the team channel.",
+    "tasks": [
+      {
+        "label": "Draft onboarding flow",
+        "status": "done"
+      },
+      {
+        "label": "Review design handoff",
+        "status": "done"
+      },
+      {
+        "label": "Wire up billing webhook",
+        "status": "inprogress"
+      },
+      {
+        "label": "QA pass on mobile nav",
+        "status": "inprogress"
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Platform",
+    "title": "Everything your team needs, nothing it doesn't",
+    "subtitle": "Flowpilot replaces the pile of disconnected tools with one place to plan, write, automate, and ship.",
+    "items": [
+      {
+        "icon": "layout",
+        "title": "Unified task board",
+        "description": "Plan sprints, track dependencies, and see what's blocked without leaving a single view."
+      },
+      {
+        "icon": "automation",
+        "title": "Smart automations",
+        "description": "Turn repetitive handoffs into rules that run themselves."
+      },
+      {
+        "icon": "docs",
+        "title": "Real-time docs",
+        "description": "Specs and decisions live next to the work they describe."
+      },
+      {
+        "icon": "integrations",
+        "title": "Open integrations",
+        "description": "Connect your existing stack through a growing library of native connectors."
+      },
+      {
+        "icon": "insights",
+        "title": "Team insights",
+        "description": "Spot bottlenecks early with a clear read on where work actually slows down."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "Workflow",
+    "title": "From idea to shipped, in one line of sight",
+    "subtitle": "Flowpilot is built around how work actually moves through a team, not around a generic task list.",
+    "steps": [
+      {
+        "title": "Capture everything in one place",
+        "description": "Requests, bugs, and ideas land in a single inbox instead of scattered threads."
+      },
+      {
+        "title": "Automate the busywork",
+        "description": "Routing, reminders, and status updates happen without anyone lifting a finger."
+      },
+      {
+        "title": "Ship with visibility",
+        "description": "Everyone sees what's in progress, what's blocked, and what's next."
+      },
+      {
+        "title": "Review and iterate",
+        "description": "Retros pull directly from the work that happened, not from memory."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Teams on Flowpilot",
+    "title": "What it changes day to day",
+    "items": [
+      {
+        "quote": "We stopped losing track of who owned what. The automations alone saved our standups.",
+        "role": "Engineering Lead",
+        "team": "12-person product team"
+      },
+      {
+        "quote": "Docs living next to tasks sounds small until you stop hunting through old messages for context.",
+        "role": "Operations Manager",
+        "team": "Early-stage startup"
+      },
+      {
+        "quote": "Our handoffs between design and engineering finally have a clear, visible trail.",
+        "role": "Design Lead",
+        "team": "Product studio"
+      },
+      {
+        "quote": "Switching tools used to mean re-training everyone. Flowpilot took a single afternoon.",
+        "role": "Founder",
+        "team": "Remote-first agency"
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Plans that grow with the team",
+    "subtitle": "Start free, upgrade when the team needs more automation and visibility.",
+    "perMonth": "/ month",
+    "highlightedLabel": "Most popular",
+    "ctaLabel": "Start free trial",
+    "tiers": [
+      {
+        "name": "Starter",
+        "price": "$0",
+        "description": "For small teams getting organized for the first time.",
+        "features": [
+          "Up to 3 projects",
+          "Unlimited tasks",
+          "Community support"
+        ],
+        "highlighted": false
+      },
+      {
+        "name": "Team",
+        "price": "$24",
+        "description": "For growing teams that need automation and integrations.",
+        "features": [
+          "Unlimited projects",
+          "Smart automations",
+          "Priority support",
+          "Core integrations"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "Scale",
+        "price": "$59",
+        "description": "For organizations running multiple teams in parallel.",
+        "features": [
+          "Advanced permissions",
+          "Team insights",
+          "Custom integrations",
+          "Dedicated onboarding"
+        ],
+        "highlighted": false
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "How does billing work?",
+        "answer": "You're billed monthly per workspace based on your plan. Upgrade, downgrade, or cancel at any time from account settings."
+      },
+      {
+        "question": "Can I migrate from another tool?",
+        "answer": "Yes. Flowpilot imports projects and tasks from common formats, and our team can help with larger migrations."
+      },
+      {
+        "question": "Is my team's data secure?",
+        "answer": "Data is encrypted in transit and at rest, with workspace-level permissions controlling who can see what."
+      },
+      {
+        "question": "Does Flowpilot work with our existing tools?",
+        "answer": "Flowpilot connects to common calendars, chat tools, and repositories, and supports custom webhooks for anything else."
+      },
+      {
+        "question": "Is there a limit on team size?",
+        "answer": "No. Every plan supports unlimited members; plans differ in automation depth, support, and admin controls."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Give your team a calmer way to work",
+    "subtitle": "Set up your first workspace in minutes and see where the busywork disappears.",
+    "button": "Start free trial",
+    "note": "No credit card required"
+  }
+}
