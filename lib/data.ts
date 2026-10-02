@@ -11,15 +11,18 @@ export type CtaLink = {
 
 /**
  * Single source of truth for primary navigation.
- * Only the homepage exists right now, so every non-home entry
- * points at an on-page section anchor (e.g. "#features").
+ * Home-page section anchors live alongside standalone routes;
+ * Navbar/Footer resolve each href based on the current pathname.
  */
 export const navLinks: NavLink[] = [
   { label: "Home", href: "/", key: "home" },
   { label: "Features", href: "#features", key: "features" },
   { label: "Testimonials", href: "#testimonials", key: "testimonials" },
-  { label: "Pricing", href: "#pricing", key: "pricing" },
-  { label: "FAQ", href: "#faq", key: "faq" },
+  { label: "Pricing", href: "/pricing", key: "pricing" },
+  { label: "FAQ", href: "/faq", key: "faq" },
+  { label: "About", href: "/about", key: "about" },
+  { label: "Blog", href: "/blog", key: "blog" },
+  { label: "Contact", href: "/contact", key: "contact" },
 ];
 
 export const BRAND = {

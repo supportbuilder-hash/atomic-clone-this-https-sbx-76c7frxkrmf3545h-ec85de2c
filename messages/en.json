@@ -231,7 +231,10 @@
         "question": "Is there a limit on team size?",
         "answer": "No. Every plan supports unlimited members; plans differ in automation depth, support, and admin controls."
       }
-    ]
+    ],
+    "categoryBilling": "Billing & Plans",
+    "categoryProduct": "Product & Features",
+    "categorySupport": "Support & Account"
   },
   "cta": {
     "title": "Give your team a calmer way to work",

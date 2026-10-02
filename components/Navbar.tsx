@@ -18,14 +18,31 @@ export default function Navbar() {
   const navT = (t.raw("nav") ?? {}) as Record<string, string>;
   const [open, setOpen] = useState(false);
 
-  const resolveHref = (href: string) => (href.startsWith("#") && pathname !== "/" ? `/${href}` : href);
+  const isRoute = (href: string) => href.startsWith("/");
+
+  const anchorHref = (href: string) => (pathname === "/" ? href : `/${href}`);
 
   const handleAnchorClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#") && pathname === "/") {
+    if (pathname === "/") {
       e.preventDefault();
       document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     }
     setOpen(false);
+  };
+
+  const renderNavLink = (href: string, label: string, key: string, className: string) => {
+    if (isRoute(href)) {
+      return (
+        <Link key={key} href={href} onClick={() => setOpen(false)} className={className}>
+          {label}
+        </Link>
+      );
+    }
+    return (
+      <Link key={key} href={anchorHref(href)} onClick={(e) => handleAnchorClick(e, href)} className={className}>
+        {label}
+      </Link>
+    );
   };
 
   return (
@@ -40,31 +57,40 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-          {navLinks.map((link) => {
-            const label = navT[link.key] ?? link.label;
-            const target = resolveHref(link.href);
-            return (
-              <Link
-                key={link.key}
-                href={target}
-                onClick={(e) => handleAnchorClick(e, link.href)}
-                className="text-sm font-medium text-[var(--muted-foreground)] transition-colors duration-300 hover:text-[var(--primary)]"
-              >
-                {label}
-              </Link>
-            );
-          })}
+          {navLinks.map((link) =>
+            renderNavLink(
+              link.href,
+              navT[link.key] ?? link.label,
+              link.key,
+              "text-sm font-medium text-[var(--muted-foreground)] transition-colors duration-300 hover:text-[var(--primary)]"
+            )
+          )}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-5 md:flex">
+          <Link
+            href="/sign-in"
+            className="text-sm font-medium text-[var(--muted-foreground)] transition-colors duration-300 hover:text-[var(--primary)]"
+          >
+            Sign in
+          </Link>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="inline-block">
-            <Link
-              href={resolveHref(PRIMARY_CTA.href)}
-              onClick={(e) => handleAnchorClick(e, PRIMARY_CTA.href)}
-              className="rounded-full bg-[var(--primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(109,40,217,0.12)] transition-all duration-300 ease-out hover:bg-[var(--accent)]"
-            >
-              {navT.cta ?? PRIMARY_CTA.label}
-            </Link>
+            {isRoute(PRIMARY_CTA.href) ? (
+              <Link
+                href={PRIMARY_CTA.href}
+                className="rounded-full bg-[var(--primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(109,40,217,0.12)] transition-all duration-300 ease-out hover:bg-[var(--accent)]"
+              >
+                {navT.cta ?? PRIMARY_CTA.label}
+              </Link>
+            ) : (
+              <Link
+                href={anchorHref(PRIMARY_CTA.href)}
+                onClick={(e) => handleAnchorClick(e, PRIMARY_CTA.href)}
+                className="rounded-full bg-[var(--primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(109,40,217,0.12)] transition-all duration-300 ease-out hover:bg-[var(--accent)]"
+              >
+                {navT.cta ?? PRIMARY_CTA.label}
+              </Link>
+            )}
           </motion.div>
         </div>
 
@@ -91,27 +117,38 @@ export default function Navbar() {
             aria-label="Mobile"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
-              {navLinks.map((link) => {
-                const label = navT[link.key] ?? link.label;
-                const target = resolveHref(link.href);
-                return (
-                  <Link
-                    key={link.key}
-                    href={target}
-                    onClick={(e) => handleAnchorClick(e, link.href)}
-                    className="rounded-lg px-3 py-2.5 text-base font-medium text-[var(--foreground)] transition-colors duration-300 hover:bg-[var(--card)] hover:text-[var(--primary)]"
-                  >
-                    {label}
-                  </Link>
-                );
-              })}
+              {navLinks.map((link) =>
+                renderNavLink(
+                  link.href,
+                  navT[link.key] ?? link.label,
+                  link.key,
+                  "rounded-lg px-3 py-2.5 text-base font-medium text-[var(--foreground)] transition-colors duration-300 hover:bg-[var(--card)] hover:text-[var(--primary)]"
+                )
+              )}
               <Link
-                href={resolveHref(PRIMARY_CTA.href)}
-                onClick={(e) => handleAnchorClick(e, PRIMARY_CTA.href)}
-                className="mt-2 rounded-full bg-[var(--primary)] px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors duration-300 hover:bg-[var(--accent)]"
+                href="/sign-in"
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-2.5 text-base font-medium text-[var(--muted-foreground)] transition-colors duration-300 hover:bg-[var(--card)] hover:text-[var(--primary)]"
               >
-                {navT.cta ?? PRIMARY_CTA.label}
+                Sign in
               </Link>
+              {isRoute(PRIMARY_CTA.href) ? (
+                <Link
+                  href={PRIMARY_CTA.href}
+                  onClick={() => setOpen(false)}
+                  className="mt-2 rounded-full bg-[var(--primary)] px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors duration-300 hover:bg-[var(--accent)]"
+                >
+                  {navT.cta ?? PRIMARY_CTA.label}
+                </Link>
+              ) : (
+                <Link
+                  href={anchorHref(PRIMARY_CTA.href)}
+                  onClick={(e) => handleAnchorClick(e, PRIMARY_CTA.href)}
+                  className="mt-2 rounded-full bg-[var(--primary)] px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors duration-300 hover:bg-[var(--accent)]"
+                >
+                  {navT.cta ?? PRIMARY_CTA.label}
+                </Link>
+              )}
             </div>
           </motion.nav>
         )}

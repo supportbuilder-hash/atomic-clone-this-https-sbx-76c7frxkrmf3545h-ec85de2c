@@ -84,7 +84,7 @@
   "features": {
     "eyebrow": "Plataforma",
     "title": "Todo lo que tu equipo necesita, nada que no",
-    "subtitle": "Flowpilot reemplaza la pila de herramientas desconectadas con un único lugar para planificar, escribir, automatizar y lanzar.",
+    "subtitle": "Flowpilot reemplaza el montón de herramientas desconectadas con un único lugar para planificar, escribir, automatizar y lanzar.",
     "items": [
       {
         "icon": "layout",
@@ -210,6 +210,9 @@
   "faq": {
     "eyebrow": "Preguntas",
     "title": "Preguntas frecuentes",
+    "categoryBilling": "Facturación y planes",
+    "categoryProduct": "Producto y características",
+    "categorySupport": "Soporte y cuenta",
     "items": [
       {
         "question": "How does billing work?",
@@ -235,8 +238,8 @@
   },
   "cta": {
     "title": "Dale a tu equipo una forma más tranquila de trabajar",
-    "subtitle": "Configura tu primer espacio de trabajo en minutos y ve dónde desaparece el trabajo innecesario.",
-    "button": "Comenzar prueba gratuita",
+    "subtitle": "Configura tu primer espacio de trabajo en minutos y ve dónde desaparece el trabajo administrativo.",
+    "button": "Iniciar prueba gratuita",
     "note": "No se requiere tarjeta de crédito"
   }
 }
